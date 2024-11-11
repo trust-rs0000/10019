@@ -19,6 +19,7 @@
     @include media-max(drawer) {
       display: flex;
       justify-content: space-between;
+      align-items: center;
     }
   }
 
@@ -29,7 +30,7 @@
     margin-bottom: rems(26px);
 
     @include media-max(drawer) {
-      // display: block;
+      margin-right: rems(20px);
       margin-bottom: 0;
     }
   }
@@ -76,10 +77,6 @@
   justify-content: flex-end;
   transition: $transition-duration;
 
-  // @include media-max(drawer) {
-  //   display: none;
-  // }
-
   &.js-cloned-header-contact {
     display: none;
 
@@ -110,6 +107,26 @@
 
     @at-root .js-cloned-header-contact & {
       min-width: 0;
+    }
+  }
+
+  .button-shop,
+  .button-mail {
+    @include media-max(drawer) {
+      min-width: 0;
+      padding: rems(15px);
+    }
+
+    &:before {
+      @include media-max(drawer) {
+        margin-right: 0;
+      }
+    }
+
+    &__text {
+      @include media-max(drawer) {
+        display: none;
+      }
     }
   }
 }

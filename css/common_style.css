@@ -18948,10 +18948,17 @@ div#builingual div.language select {
   font-size: 1.125rem;
 }
 
-.card__price > div {
-  font-family: Quicksand, Noto Sans JP, sans-serif;
-  font-weight: 500;
-  font-size: 1.5rem;
+.card {
+  padding: 1.5625rem 1.25rem 1.875rem;
+  background-color: white;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.05);
+}
+.card__title {
+  color: #5ea632;
+}
+.card__image > img {
+  width: 100% !important;
+  height: auto !important;
 }
 
 .column {
@@ -19681,7 +19688,8 @@ div#builingual div.language select {
   align-items: center;
 }
 .flex-faq .box:first-child > div {
-  padding: 1.125rem 2.5rem 1.125rem 1.25rem;
+  padding: 1.25rem 2.5rem 1.125rem 1.25rem;
+  color: #5ea632;
   position: relative;
   z-index: 0;
   cursor: pointer;
@@ -19690,6 +19698,7 @@ div#builingual div.language select {
   content: "+";
   font: var(--fa-font-solid);
   line-height: 1;
+  color: #5ea632;
   position: absolute;
   top: 50%;
   right: 20px;
@@ -19733,30 +19742,36 @@ div#builingual div.language select {
   font-size: 1.25rem;
 }
 
-.flex-voice .box {
-  padding: 1.875em 1.25em;
-  background-color: white;
+.flex-voice .box > article {
+  display: flex;
+  align-items: flex-start;
+}
+@media (max-width: 640px) {
+  .flex-voice .box > article {
+    display: block;
+  }
+}
+.flex-voice .box > article > h3 {
+  display: none;
+}
+.flex-voice .box > article > img {
+  width: 6.25rem !important;
+  margin-right: 2.5rem;
+}
+@media (max-width: 640px) {
+  .flex-voice .box > article > img {
+    display: block;
+    margin-right: auto;
+    margin-bottom: 0.625rem;
+    margin-left: auto;
+  }
 }
 .flex-voice__title {
   margin-bottom: 0.6666666667em;
   padding-bottom: 0.5555555556em;
-  font-size: 1.125rem;
-  font-weight: bold;
+  font-size: 1.375rem;
+  font-weight: medium;
   border-bottom: 1px solid #5ea632;
-}
-.flex-voice__text {
-  margin-bottom: 0.625rem;
-}
-.flex-voice__user {
-  color: #57b8e2;
-  font-size: 0.875rem;
-  text-align: right;
-}
-.flex-voice__user:before {
-  margin-right: 7px;
-  content: "\f007";
-  font: var(--fa-font-solid);
-  line-height: 1;
 }
 
 .flex-staff .box > article > img {
@@ -20202,7 +20217,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-family: Zen Kaku Gothic New, sans-serif;
   font-weight: 500;
   letter-spacing: 0.07em;
@@ -20210,12 +20225,12 @@ h2 {
 }
 @media (max-width: 834px) {
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.625rem;
   }
 }
 @media (max-width: 640px) {
   h2 {
-    font-size: 1.375rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -20228,12 +20243,12 @@ h3 {
 }
 @media (max-width: 834px) {
   h3 {
-    font-size: 1.25rem;
+    font-size: 1.375rem;
   }
 }
 @media (max-width: 640px) {
   h3 {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -20364,6 +20379,15 @@ h4 {
   margin-left: auto;
   background-color: currentColor;
   border-radius: 0.25rem;
+}
+
+.heading-dashed-bottom {
+  padding-bottom: 0.9375rem;
+  color: #5ea632;
+  background-image: linear-gradient(to right, #5ea632 8px, transparent 8px);
+  background-size: 14px 3px;
+  background-repeat: repeat-x;
+  background-position: left bottom;
 }
 
 .heading-border-bottom {
@@ -20748,7 +20772,7 @@ html:not(.page-top) #contents_wrap {
 }
 @media (max-width: 1200px) {
   html:not(.page-top) #contents_wrap {
-    margin-top: 54px;
+    margin-top: 90px;
   }
 }
 
@@ -21242,6 +21266,7 @@ html:not(.page-top) #contents_wrap {
   .header__inner {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 }
 .header__wrapper {
@@ -21252,6 +21277,7 @@ html:not(.page-top) #contents_wrap {
 }
 @media (max-width: 1200px) {
   .header__wrapper {
+    margin-right: 1.25rem;
     margin-bottom: 0;
   }
 }
@@ -21328,6 +21354,26 @@ html:not(.page-top) #contents_wrap {
 }
 .js-cloned-header-contact .header-contact__item {
   min-width: 0;
+}
+
+@media (max-width: 1200px) {
+  .header-contact .button-shop,
+  .header-contact .button-mail {
+    min-width: 0;
+    padding: 0.9375rem;
+  }
+}
+@media (max-width: 1200px) {
+  .header-contact .button-shop:before,
+  .header-contact .button-mail:before {
+    margin-right: 0;
+  }
+}
+@media (max-width: 1200px) {
+  .header-contact .button-shop__text,
+  .header-contact .button-mail__text {
+    display: none;
+  }
 }
 
 .fixed-shop-button {
@@ -22562,12 +22608,6 @@ div.error {
   margin-right: 0.625rem;
   color: white;
   background-color: #aaaaaa;
-}
-@media (max-width: 640px) {
-  .page-shop-purchase-cart #sumcart div.sum .back {
-    margin-top: 0.625rem;
-    margin-right: 0;
-  }
 }
 
 .page-shop-purchase-cart .postage {

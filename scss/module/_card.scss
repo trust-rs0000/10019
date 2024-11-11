@@ -1,10 +1,18 @@
 @use "../forward" as *;
 
 .card {
-  &__price {
-    & > div {
-      @include font-family(base, medium);
-      font-size: rems(24px);
+  padding: rems(25px) rems(20px) rems(30px);
+  background-color: white;
+  box-shadow: 4px 4px 6px rgba(black, 0.05);
+
+  &__title {
+    color: $color-main;
+  }
+
+  &__image {
+    & > img {
+      width: 100% !important;
+      height: auto !important;
     }
   }
 }
