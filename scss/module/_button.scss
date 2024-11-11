@@ -1,0 +1,104 @@
+@use "../forward" as *;
+
+%button-reboot {
+  display: inline-block;
+  max-width: 100%;
+  text-decoration: none;
+  text-align: center !important;
+  line-height: 1;
+
+  * {
+    font-size: rems(16px);
+  }
+}
+
+%button-reboot-hover {
+  transition: $transition-duration;
+
+  &:hover {
+    opacity: 0.7;
+    transition: $transition-duration;
+  }
+}
+
+.button-angle {
+  @extend %button-reboot;
+
+  min-width: rems(250px);
+  padding: rems(20px) rems(40px) rems(22px);
+  background-color: $color-accent;
+  font-size: rems(18px);
+  @include font-family(main, medium);
+  line-height: 1;
+  position: relative;
+  z-index: 0;
+
+  &:link,
+  &:visited {
+    color: white;
+  }
+
+  &:after {
+    @include font-awesome("\f105");
+    position: absolute;
+    top: 50%;
+    right: calc(50% - percentage(div(100, 230)));
+    transform: translate(0, -50%);
+  }
+
+  &--main {
+    background-color: $color-main;
+  }
+}
+
+.button-mail {
+  @extend %button-reboot;
+  @extend %button-reboot-hover;
+
+  min-width: rems(230px);
+  padding: rems(22px) rems(19px);
+  background-color: $color-accent;
+  border: 1px solid $color-accent;
+
+  &:before {
+    @include font-awesome("\f0e0", regular);
+    margin-right: rems(5px);
+    font-size: rems(18px);
+  }
+
+  &:link,
+  &:visited {
+    color: white;
+  }
+
+  &__text {
+    @include font-family(main, medium);
+    font-size: rems(18px);
+  }
+}
+
+.button-shop {
+  @extend %button-reboot;
+  @extend %button-reboot-hover;
+
+  min-width: rems(230px);
+  padding: rems(22px) rems(19px);
+  background-color: white;
+  border: 1px solid $color-accent;
+
+  &:before {
+    @include font-awesome("\f07a");
+    margin-right: rems(5px);
+    font-size: rems(18px);
+  }
+
+  &:link,
+  &:visited {
+    color: $color-accent;
+  }
+
+  &__text {
+    @include font-family(main, medium);
+    font-size: rems(18px);
+  }
+}

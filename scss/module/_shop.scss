@@ -1,0 +1,166 @@
+@use "../forward" as *;
+
+%shop-reboot {
+  // /shopと同じクラス名なので、一旦リセット
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  .items {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+
+    article {
+      align-items: flex-start;
+      width: auto;
+      margin-bottom: 0;
+      margin-left: 0;
+
+      @include media-max(sp) {
+        margin-right: 0;
+      }
+
+      & > button {
+        margin-top: 0;
+        width: auto;
+        height: auto;
+        @include font-family(base, regular);
+        background: unset;
+        background-size: unset;
+        border: none;
+        border-radius: 0;
+        text-indent: unset;
+      }
+    }
+    .photo {
+      width: 100%;
+      height: auto;
+      background-image: unset !important;
+
+      & > img {
+        display: block;
+      }
+    }
+
+    .name {
+      padding-top: 0;
+    }
+
+    .summary {
+      padding-top: 0;
+      text-align: left;
+    }
+
+    .price {
+      padding-top: 0;
+    }
+  }
+}
+
+.m-shop {
+  @extend %shop-reboot;
+
+  .items {
+    display: block !important;
+
+    article {
+      padding: rems(15px) rems(20px) rems(25px);
+      border: 1px solid $color-border;
+
+      & > button {
+        display: block;
+        width: 100%;
+        max-width: rems(200px);
+        margin-top: rems(22px);
+        margin-right: auto;
+        margin-left: auto;
+        padding: rems(14px) rems(20px) rems(15px);
+        color: white;
+        background-color: $color-accent;
+        font-size: rems(16px);
+        line-height: 1;
+        position: relative;
+        z-index: 1;
+
+        &:after {
+          @include font-awesome("\f105");
+          position: absolute;
+          top: 51%;
+          right: calc(50% - percentage(div(85, 200)));
+          transform: translate(0, -50%);
+        }
+      }
+    }
+  }
+
+  .js-m-shop-wrapper {
+    padding: rems(22px) rems(10px) rems(26px);
+  }
+
+  .photo {
+    display: block;
+    margin-bottom: rems(20px);
+
+    @include aspect-ratio(1, 1);
+    background-color: #f5f5f5;
+
+    img {
+      object-fit: contain;
+    }
+  }
+
+  .name {
+    display: inline-block;
+    font-size: rems(18px);
+    @include font-family(main, medium);
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none !important;
+
+    &:link,
+    &:visited {
+      color: $color-main;
+    }
+  }
+
+  .summary {
+    margin-top: rems(14px);
+    font-size: rems(16px);
+    line-height: 1.2;
+  }
+
+  .price {
+    width: 100%;
+    margin-top: rems(17px);
+    @include font-family(base, medium);
+    font-size: rems(14px);
+    text-align: right;
+    line-height: 1;
+  }
+}
+
+.m-shop-slider {
+  .slick-slide {
+    margin-right: rems(10px);
+    margin-left: rems(10px);
+  }
+
+  .slick-track {
+    display: flex;
+  }
+  .slick-slide {
+    height: auto !important;
+  }
+
+  .slick-dots {
+    bottom: -45px;
+
+    li > button {
+      &:before {
+        font-size: 9px;
+      }
+    }
+  }
+}

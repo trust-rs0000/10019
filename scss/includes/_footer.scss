@@ -1,0 +1,51 @@
+@use "../forward" as *;
+
+html:not(.page-top) footer#global_footer {
+  margin-top: rems(100px);
+
+  @include media-max(tab) {
+    margin-top: rems(80px);
+  }
+}
+
+.cta {
+  padding-top: rems(70px);
+  padding-bottom: rems(75px);
+  background-image: url(/images/utility/bg_watercolour_blue.jpg);
+  background-size: cover;
+
+  &__title {
+    color: $color-accent;
+    font-size: rems(40px);
+    @include font-family(main, medium);
+    line-height: 1.2;
+
+    @include media-max(bp1200) {
+      font-size: rems(34px);
+    }
+
+    @include media-max(tab) {
+      font-size: rems(28px);
+    }
+  }
+
+  &__button {
+    margin-top: rems(55px);
+
+    .button-mail {
+      min-width: rems(270px);
+
+      &__text {
+        font-size: rems(20px);
+      }
+    }
+  }
+}
+
+.copyright {
+  display: block;
+  padding-top: rems(20px);
+  padding-bottom: rems(20px);
+  font-size: rems(14px);
+  text-align: center;
+}
