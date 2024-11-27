@@ -92,15 +92,6 @@ window.addEventListener("DOMContentLoaded", function () {
   const itemSlider = new Slider(".m-shop-slider .items");
   itemSlider.itemSlider();
 
-  // ハンバーガー
-  // クラス名を変更して使用してください。
-  const HAMBURGER_NODE = document.querySelector(".hamburger");
-  if (HAMBURGER_NODE) {
-    const hamburger = new Hamburger(HAMBURGER_NODE);
-    hamburger.toggleHamburger();
-    hamburger.clickAnchor();
-  }
-
   // ぱんくず
   // クラス名を変更して使用してください。
   const BREADCRUMB_NODE = document.querySelector(".mv-sub h1");
@@ -171,12 +162,16 @@ window.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// バイリンガル用
 window.addEventListener("load", function () {
-  const HAMBURGER_TRANSLATE_NODE = document.querySelector(".translate.header .hamburger");
-  if (HAMBURGER_TRANSLATE_NODE) {
-    const hamburgerTranslate = new Hamburger(HAMBURGER_TRANSLATE_NODE);
-    hamburgerTranslate.toggleHamburger();
-    hamburgerTranslate.clickAnchor();
-  }
+  // バイリンガルでヘッダーを翻訳したときも動作するように、loadイベントに記載。
+  // ハンバーガー
+  // クラス名を変更して使用してください。
+  const HAMBURGER_NODE = document.querySelectorAll(".hamburger");
+  HAMBURGER_NODE.forEach(function (element) {
+    if (element) {
+      const hamburger = new Hamburger(element);
+      hamburger.toggleHamburger();
+      hamburger.clickAnchor();
+    }
+  });
 });

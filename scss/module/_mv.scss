@@ -7,6 +7,10 @@
     @include media-max(drawer) {
       margin-top: $header-margin-top-drawer;
     }
+
+    @include media-max(sp) {
+      margin-top: rems(70px);
+    }
   }
 }
 
