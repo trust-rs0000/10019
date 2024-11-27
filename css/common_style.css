@@ -18849,15 +18849,6 @@ div#builingual div.language select {
     padding: 4px 2px !important;
   }
 }
-@media screen and (max-width: 640px) {
-  #builingual {
-    top: auto;
-    bottom: 60px;
-    right: 0;
-    padding: 5px !important;
-    background: rgba(255, 255, 255, 0.9) !important;
-  }
-}
 .button-shop, .button-mail, .button-angle {
   display: inline-block;
   max-width: 100%;
@@ -19667,6 +19658,9 @@ div#builingual div.language select {
 
 .flex-faq {
   border: 1px solid #cccccc;
+}
+.flex-faq .translate {
+  margin-top: 0;
 }
 .flex-faq .box {
   width: 100%;
@@ -21292,6 +21286,10 @@ html:not(.page-top) #contents_wrap {
   }
 }
 
+.header.translate {
+  margin-top: 0;
+}
+
 .header-logo {
   display: inline-block;
   margin-right: 1.25rem;
@@ -21388,7 +21386,7 @@ html:not(.page-top) #contents_wrap {
   border-radius: 9.375rem;
   line-height: 1;
   position: fixed;
-  bottom: 1.25rem;
+  bottom: 3.75rem;
   right: 1.875rem;
   z-index: 1000;
   transition: 0.4s;

@@ -170,3 +170,13 @@ window.addEventListener("DOMContentLoaded", function () {
     // 以下、アニメーションの詳細な記述を記載してください。
   }
 });
+
+// バイリンガル用
+window.addEventListener("load", function () {
+  const HAMBURGER_TRANSLATE_NODE = document.querySelector(".translate.header .hamburger");
+  if (HAMBURGER_TRANSLATE_NODE) {
+    const hamburgerTranslate = new Hamburger(HAMBURGER_TRANSLATE_NODE);
+    hamburgerTranslate.toggleHamburger();
+    hamburgerTranslate.clickAnchor();
+  }
+});
